@@ -23,6 +23,7 @@ export async function getStaticPaths() {
   // get db in mongodb cluster
   const db = client.db();
   // get collection of meetups
+  // add comment to ensure deployment
   const meetupsCollection = db.collection("meetups");
   const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
   client.close();
